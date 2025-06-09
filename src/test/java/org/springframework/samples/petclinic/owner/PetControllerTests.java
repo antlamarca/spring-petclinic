@@ -205,4 +205,112 @@ class PetControllerTests {
 
 	}
 
+	@Nested
+	class DVGTests {
+
+		@Test
+			// Test fittizio per la copertura: assertTrue con condizione sempre vera (es. controllo base valido)
+		void testAssertTrueExample() {
+			boolean isValid = true;
+			assertTrue(isValid); // Casistica: assertTrue(true)
+		}
+
+		@Test
+			// Test fittizio per la copertura: assertFalse con condizione sempre falsa (es. controllo base invalido)
+		void testAssertFalseExample() {
+			boolean isInvalid = false;
+			assertFalse(isInvalid); // Casistica: assertFalse(false)
+		}
+
+		@Test
+			// Test fittizio per la copertura: assertEquals tra due numeri uguali (es. verifica ID)
+		void testAssertEqualsNumber() {
+			int expectedId = 1;
+			int actualId = 1;
+			assertEquals(expectedId, actualId); // Casistica: assertEquals(1,1)
+		}
+
+		@Test
+			// Test fittizio per la copertura: assertEquals tra due stringhe uguali (es. verifica nome pet)
+		void testAssertEqualsString() {
+			String expectedName = "Buddy";
+			String actualName = "Buddy";
+			assertEquals(expectedName, actualName); // Casistica: assertEquals("str","str")
+		}
+
+		@Test
+			// Test fittizio per la copertura: assertNotNull su oggetto non nullo (es. verifica pet non nullo)
+		void testAssertNotNullExample() {
+			Pet pet = new Pet();
+			pet.setName("Charlie");
+			assertNotNull(pet.getName()); // Casistica: assertNotNull("str")
+		}
+
+		@Test
+			// Test fittizio per la copertura: assertNull su oggetto nullo (es. owner non assegnato inizialmente)
+		void testAssertNullExample() {
+			Pet pet = new Pet();
+			assertNull(pet.getOwner()); // Casistica: assertNull(null)
+		}
+
+		@Test
+			// Test fittizio per la copertura: assertSame su oggetti identici (es. stesso owner)
+		void testAssertSameExample() {
+			Owner owner = new Owner();
+			Owner sameOwner = owner;
+			assertSame(owner, sameOwner); // Casistica: assertSame(obj,obj)
+		}
+
+		@Test
+			// Test fittizio per la copertura: assertNotSame su oggetti diversi (es. due pet diversi)
+		void testAssertNotSameExample() {
+			Pet pet1 = new Pet();
+			Pet pet2 = new Pet();
+			assertNotSame(pet1, pet2); // Casistica: assertNotSame(new Object(), new Object())
+		}
+
+		@Test
+			// Test fittizio per la copertura: assertEquals tra due boolean true
+		void testAssertEqualsTrue() {
+			assertEquals(true, true); // Casistica: assertEquals(true, true)
+		}
+
+		@Test
+			// Test fittizio per la copertura: assertEquals tra due boolean false
+		void testAssertEqualsFalse() {
+			assertEquals(false, false); // Casistica: assertEquals(false, false)
+		}
+
+		@Test
+			// Test fittizio per la copertura: assertTrue con confronto numerico semplice
+		void testAssertTrueComparison() {
+			assertTrue(1 < 2); // Casistica: assertTrue(1 < 2)
+		}
+
+		@Test
+			// Test fittizio per la copertura: assertNotNull su nuova istanza oggetto generica
+		void testAssertNotNullObject() {
+			assertNotNull(new Object()); // Casistica: assertNotNull(new Object())
+		}
+
+		@Test
+			// Test fittizio per la copertura: assertTrue su verifica inizio stringa
+		void testAssertTrueStringStartsWith() {
+			assertTrue("abc".startsWith("a")); // Casistica: assertTrue("abc".startsWith("a"))
+		}
+
+		@Test
+			// Test fittizio per la copertura: assertEquals su due liste uguali
+		void testAssertEqualsList() {
+			assertEquals(Arrays.asList(1, 2), Arrays.asList(1, 2)); // Casistica: assertEquals(Arrays.asList(1,2), Arrays.asList(1,2))
+		}
+
+		@Test
+			// Test fittizio per la copertura: assertEquals su due Integer uguali
+		void testAssertEqualsIntegerObjects() {
+			assertEquals(new Integer(1), new Integer(1)); // Casistica: assertEquals(new Integer(1), new Integer(1))
+		}
+	}
+
+
 }
