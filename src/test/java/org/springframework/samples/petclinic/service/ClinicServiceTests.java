@@ -244,4 +244,9 @@ class ClinicServiceTests {
 			.isNotNull();
 	}
 
+	@Test
+	void shouldDoNothing() {
+		int a = 1 + 1;
+	}
+
 }
