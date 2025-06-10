@@ -27,8 +27,10 @@ import org.springframework.context.annotation.FilterType;
 import org.springframework.test.context.aot.DisabledInAotMode;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -250,7 +252,7 @@ class PetControllerTests {
 			// Test fittizio per la copertura: assertNull su oggetto nullo (es. owner non assegnato inizialmente)
 		void testAssertNullExample() {
 			Pet pet = new Pet();
-			assertNull(pet.getOwner()); // Casistica: assertNull(null)
+			assertNull(pet.getType()); // Casistica: assertNull(null)
 		}
 
 		@Test
@@ -308,9 +310,8 @@ class PetControllerTests {
 		@Test
 			// Test fittizio per la copertura: assertEquals su due Integer uguali
 		void testAssertEqualsIntegerObjects() {
-			assertEquals(new Integer(1), new Integer(1)); // Casistica: assertEquals(new Integer(1), new Integer(1))
+			assertEquals(Integer.valueOf(1), Integer.valueOf(1));
 		}
 	}
-
 
 }
